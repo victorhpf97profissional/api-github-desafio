@@ -10,7 +10,6 @@ import { UsersService } from 'src/app/shared/services/github/users.service';
 export class InfoUserComponent implements OnInit {
   public userInfo: any = { user: null, repository: null, followers: null };
 
-
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -25,6 +24,8 @@ export class InfoUserComponent implements OnInit {
   validParameters(userName: string) {
     if (userName) {
       this.loadUserByName(userName);
+      this.loadUserRepository(userName);
+      this.loadUserFollowers(userName);
     }
     else {
       this.router.navigate(['/pesquisa']);
@@ -33,7 +34,7 @@ export class InfoUserComponent implements OnInit {
 
   loadUserByName(userName: string) {
     this.serviceUser.getByName(userName).subscribe((user: any) => {
-      console.log(user)
+      this.userInfo.user = user;
     }, err => {
       this.router.navigate(['error/', err.status]);
     });
