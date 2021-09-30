@@ -8,6 +8,8 @@ import { UsersService } from 'src/app/shared/services/github/users.service';
   styleUrls: ['./info-user.component.scss']
 })
 export class InfoUserComponent implements OnInit {
+  public userInfo: any = { user: null, repository: null, followers: null };
+
 
   constructor(
     private route: ActivatedRoute,
@@ -36,5 +38,19 @@ export class InfoUserComponent implements OnInit {
       this.router.navigate(['error/', err.status]);
     });
   }
+
+  loadUserRepository(userName: string) {
+    this.serviceUser.getRepository(userName).subscribe(repository => {
+      this.userInfo.repository = repository;
+      console.warn({ repository: repository })
+    });
+  }
+
+  loadUserFollowers(userName: string) {
+    this.serviceUser.getFollowers(userName).subscribe(followers => {
+      this.userInfo.followers = followers;
+    });
+  }
+
 
 }

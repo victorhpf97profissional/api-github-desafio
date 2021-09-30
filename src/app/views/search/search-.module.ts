@@ -1,7 +1,7 @@
 
 import { NgModule } from '@angular/core';
-import { SearchRoutingModule } from './search-routing.module';
 import { CommonModule } from '@angular/common';
+import { SearchRoutingModule } from './search-routing.module';
 import { UsersService } from 'src/app/shared/services/github/users.service';
 import { SearchUsersComponent } from './search-users/search-users.component';
 const APP_MODULES = [

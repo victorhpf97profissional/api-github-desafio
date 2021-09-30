@@ -20,4 +20,12 @@ export class UsersService {
         return this.http.get<UserInfo>(`${this.URL}/users/${userName}`);
     }
 
+    getRepository(username: string): Observable<User[]> {
+        return this.http.get<User[]>(`${this.URL}/users/${username}/repos`);
+    }
+
+    getFollowers(username: string): Observable<User[]> {
+        return this.http.get<User[]>(`${this.URL}/users/${username}/followers`);
+    }
+
 }
