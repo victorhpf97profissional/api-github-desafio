@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "api-github-desafio"
+  "defaultProject": "api-github-desafio",
+  "cli": {
+    "analytics": "c485c34a-ff40-42d7-9594-c3a58e1049ea"
+  }
 }
