@@ -4,13 +4,18 @@ import { CommonModule } from '@angular/common';
 import { SearchRoutingModule } from './search-routing.module';
 import { UsersService } from 'src/app/shared/services/github/users.service';
 import { SearchUsersComponent } from './search-users/search-users.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { InfoModule } from '../info/info-.module';
 const APP_MODULES = [
     CommonModule,
-    SearchRoutingModule
+    SearchRoutingModule,
+    SharedModule,
+    InfoModule
 ]
 
 const APP_COMPONENT = [
-    SearchUsersComponent
+    SearchUsersComponent,
+    
 ]
 
 @NgModule({

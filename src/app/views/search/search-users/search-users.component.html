@@ -1,6 +1,8 @@
 <div class="container">
     <div class="cards">
-        <div class="card" *ngFor="let user of listUsers" [routerLink]="['/informacoes/usuario', user.login]">
+        <!-- <div class="card" *ngFor="let user of listUsers" [routerLink]="['/informacoes/usuario', user.login]"> -->
+        <div class="card" *ngFor="let user of listUsers" (click)="openInfoUserDialog()">
+
             <div class="user">
                 <div class="avatar">
                     <img src="{{user.avatar_url}}" alt="">
@@ -26,3 +28,5 @@
         </div>
     </div>
 </div>
+
+<app-info-user-dialog *ngIf="showInfoUserDialog" (showChange)="closeInfoUserDialog()"></app-info-user-dialog>

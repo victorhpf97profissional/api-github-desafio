@@ -10,7 +10,8 @@ import { UsersService } from 'src/app/shared/services/github/users.service';
 export class SearchUsersComponent implements OnInit {
 
   public listUsers: any = [];
-
+  // public showDialog = true;
+  public showInfoUserDialog = true;
   constructor(private serviceUser: UsersService, private router: Router,) { }
 
   ngOnInit(): void {
@@ -27,6 +28,15 @@ export class SearchUsersComponent implements OnInit {
   //Select a user for get a single user of api Github
   selectUser(userName: any) {
     this.router.navigate(['/informacoes/usuario'], userName);
+  }
+
+  closeInfoUserDialog() {
+    this.showInfoUserDialog = false;
+  }
+
+  openInfoUserDialog() {
+    this.showInfoUserDialog = true;
+
   }
 
 }
