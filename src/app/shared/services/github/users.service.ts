@@ -6,7 +6,7 @@ import { User } from '../../interfaces/user';
 import { UserInfo } from '../../interfaces/user-info';
 
 @Injectable()
-export class UserService {
+export class UsersService {
 
     private URL = environment.GITHUB_API_URL;
 

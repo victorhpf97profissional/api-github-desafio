@@ -3,9 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ViewsComponent } from './views.component';
 
 const routes: Routes = [
-    {
-        path: '', component: ViewsComponent, children: []
-    }
+    { path: '', redirectTo: '/pesquisa', pathMatch: 'full' },
+    { path: 'pesquisa', loadChildren: () => import('./search/search-.module').then(m => m.SearchModule) },
 ];
 
 @NgModule({
