@@ -1,11 +1,12 @@
 <nav>
-  <div class="container">
-    <a>Home</a>
-    <div class="search-container">
-      <input type="text" name="" id="" placeholder="Search...">
-    </div>
-    <div class="dark">
+    <div class="container">
+        <a>Home</a>
+        <div class="search-container">
+            <input #search type="text" name="" id="" placeholder="Search...">
+            <button (click)="submitSearch(search.value)">Pesquisar</button>
+        </div>
+        <div class="dark">
 
+        </div>
     </div>
-  </div>
 </nav>

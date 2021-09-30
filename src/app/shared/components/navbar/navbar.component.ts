@@ -12,4 +12,8 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submitSearch(searchValue: string) {
+    console.log({ searchValue: searchValue })
+  }
+
 }

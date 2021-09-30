@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
