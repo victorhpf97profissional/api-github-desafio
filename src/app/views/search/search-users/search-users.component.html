@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="cards">
+        <div class="card" *ngFor="let user of listUsers" [routerLink]="['/informacoes/usuario', user.login]">
+            <div class="user">
+                <div class="avatar">
+                    <img src="{{user.avatar_url}}" alt="">
+                </div>
+                <div class="user-details">
+                    <p class="name">{{user.login}}</p>
+                    <p class="description">mojombo</p>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="followers">
+                    <i class="bi bi-graph-up"></i>
+                    <p>22,699 followers</p>
+                </div>
+                <div class="adress">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <p>San Francisco</p>
+                </div>
+                <div class="link">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
