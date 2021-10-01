@@ -1,0 +1,10 @@
+{
+    "hosting": {
+        "public": "dist/api-github-desafio",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ]
+    }
+}
