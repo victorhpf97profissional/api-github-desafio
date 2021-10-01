@@ -36,7 +36,7 @@ export class InfoUserComponent implements OnInit {
     this.serviceUser.getByName(userName).subscribe((user: any) => {
       this.userInfo.user = user;
     }, err => {
-      this.router.navigate(['error/', err.status]);
+      this.router.navigate(['**']);
     });
   }
 

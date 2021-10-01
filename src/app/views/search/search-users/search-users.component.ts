@@ -9,9 +9,10 @@ import { UsersService } from 'src/app/shared/services/github/users.service';
 })
 export class SearchUsersComponent implements OnInit {
 
-  public listUsers: any = [];
-  // public showDialog = true;
-  public showInfoUserDialog = true;
+  public listUsers: any = null;
+  public showInfoUserDialog = false;
+  public dataInfoUserDialog: string = '';
+
   constructor(private serviceUser: UsersService, private router: Router,) { }
 
   ngOnInit(): void {
@@ -22,6 +23,7 @@ export class SearchUsersComponent implements OnInit {
   getAllUsers() {
     this.serviceUser.getAll().subscribe(users => {
       this.listUsers = users;
+      console.warn({ users: users })
     });
   }
 
@@ -34,7 +36,8 @@ export class SearchUsersComponent implements OnInit {
     this.showInfoUserDialog = false;
   }
 
-  openInfoUserDialog() {
+  openInfoUserDialog(userName: string) {
+    this.dataInfoUserDialog = userName;
     this.showInfoUserDialog = true;
 
   }

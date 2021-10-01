@@ -1,15 +1,45 @@
-<div class="modal-container">
-    <!-- <input id="modal-toggle" type="checkbox"> -->
-    <!-- <button>Click me</button> -->
-    <!-- <div class="modal-backdrop">
-        
-        
-    </div> 
+<div class="dialog-container">
+    <div class="dialog-content" style="margin-bottom: 200px;">
 
-</div>
- -->
+        <button style="float: right; height: 43px;  " (click)="back()">Sair</button>
 
-    <div class="modal-content">
-        <button (click)="back()">Sair</button>
+        <table id="user">
+            <tr>
+                <th>Foto</th>
+                <th>Nome</th>
+                <th>Localidade</th>
+            </tr>
+            <tr>
+                <td>
+                    <img width="50px" class="avatar" src="{{userInfo.user?.avatar_url}}" alt="">
+                </td>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+            </tr>
+        </table>
+        <br>
+        <table id="repository">
+            <tr>
+                <th>Repositório</th>
+            </tr>
+            <tr *ngFor="let repo of userInfo.repository">
+                <td>
+                    <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table id="followers">
+            <tr>
+                <th>Seguidores</th>
+            </tr>
+            <tr *ngFor="let follower of userInfo.followers">
+                <td>
+                    <a href="{{ follower.html_url }}" target="_blank">
+                        <img src="{{ follower.avatar_url }}" width="50" class="avatar mr-2" alt="{{ follower.name }}" /> {{ follower.login }}
+                    </a>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
