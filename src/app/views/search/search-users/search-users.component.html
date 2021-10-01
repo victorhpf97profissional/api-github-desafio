@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="cards">
+        <div class="card" *ngFor="let user of listUsers">
+            <div class="user">
+                <div class="avatar" [routerLink]="['/informacoes/usuario', user.login]">
+                    <img src="{{user.avatar_url}}" alt="">
+                </div>
+                <div class="user-details">
+                    <p class="name" [routerLink]="['/informacoes/usuario', user.login]">{{user.login}}</p>
+                    <p class="description">
+                        <a href="{{user.html_url}}">{{user.html_url}}</a>
+                    </p>
+                </div>
+            </div>
+            <div class="actions">
+                <div (click)="openInfoUserDialog(user.login)" class="link">
+                    <i class="bi bi-eye icon-dialog"></i>
+                </div>
+                <div class="link" [routerLink]="['/informacoes/usuario', user.login]">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-info-user-dialog *ngIf="showInfoUserDialog" [data]="dataInfoUserDialog" (showChange)="closeInfoUserDialog()"></app-info-user-dialog>

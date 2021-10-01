@@ -1,0 +1,169 @@
+///////////////////////////////////// Dialog   /////////////////////////////////////
+.dialog-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    pointer-events: none;
+    opacity: 1;
+    overflow: scroll;
+}
+
+.dialog-container .dialog-content {
+    background-color: #fff;
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    padding: 10px 30px;
+    max-height: 1000px;
+    overflow: auto;
+    position: absolute;
+    left: calc(50% - 538px);
+    top: 12%;
+    border-radius: 4px;
+    z-index: 999;
+    pointer-events: auto;
+    cursor: auto;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 400px) {
+    .dialog-container #dialog-toggle:checked~.dialog-backdrop .dialog-content {
+        left: 0;
+    }
+}
+
+.dialog-container #dialog-toggle:checked~.dialog-backdrop .dialog-content .dialog-close {
+    color: #666;
+    position: absolute;
+    right: 2px;
+    top: 0;
+    padding-top: 7px;
+    background: #fff;
+    font-size: 16px;
+    width: 25px;
+    height: 28px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.dialog-container #dialog-toggle:checked~.dialog-backdrop .dialog-content .dialog-close.button {
+    top: initial;
+    bottom: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: #fff;
+    width: 50px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.dialog-container #dialog-toggle:checked~.dialog-backdrop .dialog-content .dialog-close.button:hover {
+    color: #fff;
+    background: #1E824C;
+}
+
+.dialog-container #dialog-toggle:checked~.dialog-backdrop .dialog-content .dialog-close:hover {
+    color: #333;
+}
+
+/////////////////////////// Table  ///////////////////////////
+#user {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#user td,
+#user th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#user tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#user tr:hover {
+    background-color: #ddd;
+}
+
+#user th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.avatar {
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 20%);
+}
+
+///////////////////// followers ////////////////////////////////
+#repository {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 48%;
+    margin-top: 18px;
+    float: right;
+}
+
+#repository td,
+#repository th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#repository tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#repository tr:hover {
+    background-color: #ddd;
+}
+
+#repository th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+///////////////////// followers ////////////////////////////////
+#followers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin-bottom: 600px;
+}
+
+#followers td,
+#followers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#followers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#followers tr:hover {
+    background-color: #ddd;
+}
+
+#followers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--color-primary);
+    color: white;
+}
