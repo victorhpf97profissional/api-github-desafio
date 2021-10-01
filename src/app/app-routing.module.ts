@@ -4,7 +4,7 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./views/views.module').then(m => m.ViewsModule) },
-  { path: '**/:erro', component: NotFoundComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

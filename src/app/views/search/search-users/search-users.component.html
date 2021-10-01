@@ -1,8 +1,6 @@
 <div class="container">
     <div class="cards">
-        <!-- <div class="card" *ngFor="let user of listUsers" [routerLink]="['/informacoes/usuario', user.login]"> -->
         <div class="card" *ngFor="let user of listUsers">
-
             <div class="user">
                 <div class="avatar" [routerLink]="['/informacoes/usuario', user.login]">
                     <img src="{{user.avatar_url}}" alt="">

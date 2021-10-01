@@ -19,7 +19,6 @@ export class SearchUsersComponent implements OnInit {
     this.getAllUsers();
   }
 
-  //Get all users of api Github
   getAllUsers() {
     this.serviceUser.getAll().subscribe(users => {
       this.listUsers = users;
@@ -27,7 +26,6 @@ export class SearchUsersComponent implements OnInit {
     });
   }
 
-  //Select a user for get a single user of api Github
   selectUser(userName: any) {
     this.router.navigate(['/informacoes/usuario'], userName);
   }
@@ -39,7 +37,6 @@ export class SearchUsersComponent implements OnInit {
   openInfoUserDialog(userName: string) {
     this.dataInfoUserDialog = userName;
     this.showInfoUserDialog = true;
-
   }
 
 }

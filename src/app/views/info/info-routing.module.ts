@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { InfoUserComponent } from './info-user/info-user.component';
 
 const routes: Routes = [
-    // { path: '', redirectTo: 'informacoes', pathMatch: 'full' },
     { path: 'usuario/:username', component: InfoUserComponent },
 ];
 
